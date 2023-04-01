@@ -22,8 +22,7 @@ const Editor = () => {
     }
 
     const createPost = async () => {
-        console.log(post)
-        const res = await fetch('http://localhost:8000/api/blogs/post', {
+        const res = await fetch('https://the-daily-scoop-backend.onrender.com/api/blogs/post', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -31,7 +30,7 @@ const Editor = () => {
             body: JSON.stringify(post)
         })
         const data = await res.json()
-        console.log(data)
+        alert(data.success)
     }
 
     return (
